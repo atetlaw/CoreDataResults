@@ -10,6 +10,10 @@
 		49690A39206F8B7D00663D73 /* CoreDataResults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49690A2F206F8B7D00663D73 /* CoreDataResults.framework */; };
 		49690A3E206F8B7D00663D73 /* CoreDataResultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49690A3D206F8B7D00663D73 /* CoreDataResultsTests.swift */; };
 		49690A40206F8B7D00663D73 /* CoreDataResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 49690A32206F8B7D00663D73 /* CoreDataResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49690A55206F8FB800663D73 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49690A51206F8FB800663D73 /* QueryResult.swift */; };
+		49690A56206F8FB800663D73 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49690A52206F8FB800663D73 /* Entity.swift */; };
+		49690A57206F8FB800663D73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49690A53206F8FB800663D73 /* Extensions.swift */; };
+		49690A58206F8FB800663D73 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49690A54206F8FB800663D73 /* Query.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		49690A38206F8B7D00663D73 /* CoreDataResultsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataResultsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49690A3D206F8B7D00663D73 /* CoreDataResultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataResultsTests.swift; sourceTree = "<group>"; };
 		49690A3F206F8B7D00663D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49690A51206F8FB800663D73 /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
+		49690A52206F8FB800663D73 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		49690A53206F8FB800663D73 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		49690A54206F8FB800663D73 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 		49690A31206F8B7D00663D73 /* CoreDataResults */ = {
 			isa = PBXGroup;
 			children = (
+				49690A52206F8FB800663D73 /* Entity.swift */,
+				49690A53206F8FB800663D73 /* Extensions.swift */,
+				49690A54206F8FB800663D73 /* Query.swift */,
+				49690A51206F8FB800663D73 /* QueryResult.swift */,
 				49690A32206F8B7D00663D73 /* CoreDataResults.h */,
 				49690A33206F8B7D00663D73 /* Info.plist */,
 			);
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					49690A2E206F8B7D00663D73 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					49690A37206F8B7D00663D73 = {
 						CreatedOnToolsVersion = 9.3;
@@ -194,6 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49690A58206F8FB800663D73 /* Query.swift in Sources */,
+				49690A56206F8FB800663D73 /* Entity.swift in Sources */,
+				49690A57206F8FB800663D73 /* Extensions.swift in Sources */,
+				49690A55206F8FB800663D73 /* QueryResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +356,7 @@
 		49690A44206F8B7D00663D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.CoreDataResults;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +383,7 @@
 		49690A45206F8B7D00663D73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +409,7 @@
 		49690A47206F8B7D00663D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHYAM6NMLR;
 				INFOPLIST_FILE = CoreDataResultsTests/Info.plist;
@@ -407,6 +428,7 @@
 		49690A48206F8B7D00663D73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHYAM6NMLR;
 				INFOPLIST_FILE = CoreDataResultsTests/Info.plist;
