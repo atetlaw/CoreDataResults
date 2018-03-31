@@ -97,14 +97,11 @@ public struct Query<E: NSManagedObject> {
             handler(QueryResult<E>.managedObjects(result))
         }
 
-        let ctx = managedObjectContext
-        managedObjectContext.perform {
-            do {
-                let _ = try ctx.execute(asyncFetch)
+        do {
+            let _ = try managedObjectContext.execute(asyncFetch)
 
-            } catch (let error) {
-                handler(QueryResult<E>.error(error))
-            }
+        } catch (let error) {
+            handler(QueryResult<E>.error(error))
         }
     }
 
