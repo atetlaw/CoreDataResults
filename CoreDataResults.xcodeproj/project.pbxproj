@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493137E42206C2B4007954F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49690A2F206F8B7D00663D73 /* CoreDataResults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataResults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49690A32206F8B7D00663D73 /* CoreDataResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataResults.h; sourceTree = "<group>"; };
 		49690A33206F8B7D00663D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		49690A25206F8B7D00663D73 = {
 			isa = PBXGroup;
 			children = (
+				493137E42206C2B4007954F7 /* README.md */,
 				49690A31206F8B7D00663D73 /* CoreDataResults */,
 				49690A3C206F8B7D00663D73 /* CoreDataResultsTests */,
 				49690A30206F8B7D00663D73 /* Products */,
