@@ -4,7 +4,7 @@ This one is a bit of an experiment for creating a useful CoreData API that abstr
 
 This one starts with the managed object context as the focus of making queries. You add extensions for your managed object subclasses, in this case `Page` and `Topic`:
 
-```
+```swift
 extension NSManagedObjectContext {
     var pages: Entity<Page> {
         return entity()
@@ -18,7 +18,9 @@ extension NSManagedObjectContext {
 
 Then, if you use `viewContext` from `NSManagedContainer` you can call:
 
-`viewContext.pages.sorted(with: [NSSortDescriptor(key: "title", ascending: true)]).managedObjects`
+```swift
+viewContext.pages.sorted(with: [NSSortDescriptor(key: "title", ascending: true)]).managedObjects
+```
 
 `viewContext.pages.sorted(with: [NSSortDescriptor(key: "title", ascending: true)])` sets up the fetch request parameters, and then calling `.managedObjects` is when the fetch is actually made. Alternatively you can call `.managedObjectIDs`, `.count`, `.dictionaries`, even `.first`.
 
@@ -28,10 +30,12 @@ There are some shortcuts like:
 
 You can stack all the api calls for finer control over querying:
 
-`viewContext.pages
-                       .matching(predicate: NSPredicate(format: "%K == %@", "topic", "General"))
-                       .sorted(with: [NSSortDescriptor(key: "created", ascending: true)])
-                       .limit(to: 10)
-                       .managedObjects`
+```swift
+viewContext.pages
+           .matching(predicate: NSPredicate(format: "%K == %@", "topic", "General"))
+           .sorted(with: [NSSortDescriptor(key: "created", ascending: true)])
+           .limit(to: 10)
+           .managedObjects
+```
                        
 It's not really complete yet, just trying it out to see where it goes, and if the API feels natural. There's an early attempt at supporting sync queries as well.
