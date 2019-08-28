@@ -31,11 +31,10 @@ There are some shortcuts like:
 You can stack all the api calls for finer control over querying:
 
 ```swift
-viewContext.pages
-           .matching(predicate: NSPredicate(format: "%K == %@", "topic", "General"))
-           .sorted(with: [NSSortDescriptor(key: "created", ascending: true)])
-           .limit(to: 10)
-           .managedObjects
+viewContext.pages.matching(predicate: NSPredicate(format: "%K == %@", "topic", "General"))
+                 .sorted(with: [NSSortDescriptor(key: "created", ascending: true)])
+                 .limit(to: 10)
+                 .managedObjects
 ```
                        
 It's not really complete yet, just trying it out to see where it goes, and if the API feels natural. There's an early attempt at supporting sync queries as well.
