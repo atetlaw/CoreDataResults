@@ -32,20 +32,22 @@ public struct Entity<E: NSManagedObject> {
         return Query(context: context, request: fetchRequest).managedObjects
     }
 
+    public var allObjectIDs: [NSManagedObjectID] {
+        return Query(context: context, request: fetchRequest).managedObjectIDs
+    }
+
     public var count: Int {
         return Query(context: context, request: fetchRequest).count
     }
 
-    public func findOrCreate(matching predicate: NSPredicate, setup: ((E) -> E) = { $0 }) -> E {
-        guard let entity: E = Query(context: context, request: fetchRequest).matching(predicate: predicate).first else {
-            return create(setup: setup)
-        }
-
+    public func make(_ setup: (E) -> Void) -> E {
+        let entity = E(context: context)
+        setup(entity)
         return entity
     }
 
-    public func create(setup: (E) -> E) -> E {
-        return setup(E(context: context))
+    public func matching(_ id: NSManagedObjectID) -> E? {
+        return context.object(with: id) as? E
     }
 
     public func matching(predicate: NSPredicate) -> Query<E> {

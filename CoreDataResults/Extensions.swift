@@ -29,36 +29,14 @@ extension NSManagedObject {
     }
 }
 
-extension NSPredicate {
-    var not: NSPredicate {
-        return NSCompoundPredicate(notPredicateWithSubpredicate: self)
-    }
+public func &&(lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+    return NSCompoundPredicate(andPredicateWithSubpredicates: [lhs, rhs])
+}
 
-    func and(predicates: NSPredicate...) -> NSPredicate {
-        return and(predicates: predicates)
-    }
+public func ||(lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+    return NSCompoundPredicate(orPredicateWithSubpredicates: [lhs, rhs])
+}
 
-    func and(predicates: [NSPredicate]) -> NSPredicate {
-        var allPredicates = [self]
-        allPredicates.append(contentsOf: predicates)
-        return NSCompoundPredicate(andPredicateWithSubpredicates: allPredicates)
-    }
-
-    func and(format: String, arguments: [AnyObject]? = nil) -> NSPredicate {
-        return and(predicates: [NSPredicate(format: format, argumentArray: arguments)])
-    }
-
-    func or(predicates: NSPredicate...) -> NSPredicate {
-        return or(predicates: predicates)
-    }
-
-    func or(predicates: [NSPredicate]) -> NSPredicate {
-        var allPredicates = [self]
-        allPredicates.append(contentsOf: predicates)
-        return NSCompoundPredicate(orPredicateWithSubpredicates: allPredicates)
-    }
-
-    func or(format: String, arguments: [AnyObject]? = nil) -> NSPredicate {
-        return or(predicates: [NSPredicate(format: format, argumentArray: arguments)])
-    }
+public prefix func !(_ predicate: NSPredicate) -> NSPredicate {
+    return  NSCompoundPredicate(notPredicateWithSubpredicate: predicate)
 }

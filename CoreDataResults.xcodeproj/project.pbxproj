@@ -162,11 +162,11 @@
 				TargetAttributes = {
 					49690A2E206F8B7D00663D73 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 					};
 					49690A37206F8B7D00663D73 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -176,6 +176,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 49690A25206F8B7D00663D73;
 			productRefGroup = 49690A30206F8B7D00663D73 /* Products */;
@@ -378,7 +379,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -404,7 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.CoreDataResults;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -423,7 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.CoreDataResultsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -442,7 +443,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.CoreDataResultsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

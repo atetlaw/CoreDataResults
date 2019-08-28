@@ -61,6 +61,7 @@ public struct Query<E: NSManagedObject> {
     }
 
     //MARK: Getting the results
+
     public var managedObjects: [E] {
         return (try? asManagedObjects()) ?? []
     }
@@ -70,7 +71,7 @@ public struct Query<E: NSManagedObject> {
     }
 
     public var first: E? {
-        return (try? firstResult()) ?? nil
+        return try! firstResult()
     }
 
     public var managedObjectIDs: [NSManagedObjectID] {
@@ -164,5 +165,6 @@ public struct Query<E: NSManagedObject> {
         return fetch
     }
 }
+
 
 
